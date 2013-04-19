@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{9fdf7dd6-a1ec-4a9c-bff1-b5e1bbb94419}</UniqueIdentifier>
+      <Extensions>fs;vs</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="models">
+      <UniqueIdentifier>{bf237e1b-9bce-4186-b523-372a71b7b877}</UniqueIdentifier>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Release">
+      <UniqueIdentifier>{632c29ee-c31a-41ed-b8d8-3687331478fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="errorinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="auxfuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fieldoperations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bezier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="objloader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="errorinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="init.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="auxfuncs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fieldoperations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bezier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\shaders\frag_shader.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\shaders\vertex_shader.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\Release\particle_system.exe">
+      <Filter>Release</Filter>
+    </None>
+    <None Include="..\Release\freeglut.dll">
+      <Filter>Release</Filter>
+    </None>
+    <None Include="..\Release\FreeImage.dll">
+      <Filter>Release</Filter>
+    </None>
+    <None Include="..\Release\glew32.dll">
+      <Filter>Release</Filter>
+    </None>
+    <None Include="..\models\sun.jpg">
+      <Filter>models</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="..\models\particle.obj">
+      <Filter>models</Filter>
+    </Object>
+    <Object Include="..\models\sphere.obj">
+      <Filter>models</Filter>
+    </Object>
+  </ItemGroup>
+</Project>
