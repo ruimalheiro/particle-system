@@ -1,5 +1,5 @@
 /*
-	This is a simple fragment shader.
+  This is a simple fragment shader.
 */
 
 #version 330
@@ -11,6 +11,6 @@ uniform sampler2D tex;
 
 void main(void)
 {
-	
-	fragColor = color_vf * texture(tex, texCoord_vf);
+  
+  fragColor = color_vf * texture(tex, texCoord_vf);
 }

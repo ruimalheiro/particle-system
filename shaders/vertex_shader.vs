@@ -1,5 +1,5 @@
 /*
-	The directive layout(location=?) "hard-codes" the location of the attributes	
+  The directive layout(location=?) "hard-codes" the location of the attributes  
 */
 
 #version 330
@@ -22,14 +22,14 @@ uniform vec4 diffuseColor;
 
 void main()
 {
-	texCoord_vf = texCoord;
-	
-	vec3 transfNormal = normalize(nMatrix * normal);
-	vec3 normalizedLightDir = normalize(lightDir);
-	float cosAng = dot(transfNormal, normalizedLightDir);
-	cosAng = clamp(cosAng, 0, 1);
-	
-	color_vf = (diffuseColor * lightIntensity * cosAng) + (diffuseColor * ambientIntensity);
-	gl_Position = pMatrix * vMatrix * mMatrix * vertex;
+  texCoord_vf = texCoord;
+  
+  vec3 transfNormal = normalize(nMatrix * normal);
+  vec3 normalizedLightDir = normalize(lightDir);
+  float cosAng = dot(transfNormal, normalizedLightDir);
+  cosAng = clamp(cosAng, 0, 1);
+  
+  color_vf = (diffuseColor * lightIntensity * cosAng) + (diffuseColor * ambientIntensity);
+  gl_Position = pMatrix * vMatrix * mMatrix * vertex;
 }
 

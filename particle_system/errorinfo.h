@@ -5,14 +5,14 @@
 #include <stdio.h>
 
 /* 
-	Error checking function:
+  Error checking function:
 
-	It checks for error in the OpenGL pipeline;
+  It checks for error in the OpenGL pipeline;
 */
 void checkError(const char *functionName);
 
 /*
-	Prints the information regarding the OpenGL context
+  Prints the information regarding the OpenGL context
 */
 void dumpInfo(void);
 

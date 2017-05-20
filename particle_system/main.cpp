@@ -22,8 +22,8 @@
 bool inited = false; //Have we done initialization?
 
 /*
-	vao: will hold the VAO identifier (usually one per object)
-	geomId: will hold the VBO identifier (one per attribute: position, normal, etc.)
+  vao: will hold the VAO identifier (usually one per object)
+  geomId: will hold the VBO identifier (one per attribute: position, normal, etc.)
 */
 
 GLuint vao;
@@ -32,11 +32,11 @@ GLuint normalsId;
 GLuint texUVId;
 
 /*
-	variables to hold the shaders related identifiers
+  variables to hold the shaders related identifiers
 
-	vertexShaderId: will hold the vertex shader identifier
-	fragShaderId: will hold the fragment shader identifier
-	programId: will hold the program identifier
+  vertexShaderId: will hold the vertex shader identifier
+  fragShaderId: will hold the fragment shader identifier
+  programId: will hold the program identifier
 */
 
 GLuint vertexShaderId;
@@ -47,15 +47,15 @@ GLuint baseTextureId;
 GLuint specularTextureId;
 
 /*
-	Perspective and camera related variables.
+  Perspective and camera related variables.
 
-	perspectiveMatrix: perspective matrix. this is a GLM type, representing a 4x4 matrix
-	cameraMatrix: camera or view matrix.
-	cameraPos: camera initial position
-	cameraView: camera view direction
-	cameraUp: camera up vector
-	angle: initial viewing angle (-PI/2)
-	velocity: camera's rotation and moving velocity
+  perspectiveMatrix: perspective matrix. this is a GLM type, representing a 4x4 matrix
+  cameraMatrix: camera or view matrix.
+  cameraPos: camera initial position
+  cameraView: camera view direction
+  cameraUp: camera up vector
+  angle: initial viewing angle (-PI/2)
+  velocity: camera's rotation and moving velocity
 
 */
 int camera_mode = 0;
@@ -85,10 +85,10 @@ OBJLoader object("../models/particle.obj");
 Particle **particles;
 
 /* 
-	Mouse state
-	0 nothing
-	1 down
-	2 up 
+  Mouse state
+  0 nothing
+  1 down
+  2 up 
 */
 int mouse_state = 0;
 
@@ -100,96 +100,96 @@ unsigned int demo_frame = 0;
 struct PARAMS params;
 
 /* 
-	This is a function to be issued on every cycle.
+  This is a function to be issued on every cycle.
 
-	It performs all that is needed for an interactive simulation.
+  It performs all that is needed for an interactive simulation.
 */
 
 void mainLoop(void)
 {
-	setupCamera();
-	display();
+  setupCamera();
+  display();
 }
 
-#define CPARAM(x)	if(strcmp(argv[i],(x))==0)
+#define CPARAM(x) if(strcmp(argv[i],(x))==0)
 
 void parse_params(char **argv) {
 
-	// Default values
-	params.demo = false;
-	params.fullscreen = false;
-	params.res_width = 1024;
-	params.res_height = 768;
-	params.obj = "../models/sphere.obj";
-	params.texture = "../models/sun.jpg";
-	params.particles = 20000;
+  // Default values
+  params.demo = false;
+  params.fullscreen = false;
+  params.res_width = 1024;
+  params.res_height = 768;
+  params.obj = "../models/sphere.obj";
+  params.texture = "../models/sun.jpg";
+  params.particles = 20000;
 
-	for(int i=1; argv[i]!=NULL;i++) {
-		CPARAM("-d")
-			params.demo = true;
-		CPARAM("-f")
-			params.fullscreen = true;
-		CPARAM("-r") {
-			params.res_width = atoi(argv[++i]);
-			params.res_height = atoi(argv[++i]);
-		}
-		CPARAM("-t")
-			params.texture = argv[++i];
-		CPARAM("-o")
-			params.obj = argv[++i];
-		CPARAM("-p")
-			params.particles = atoi(argv[++i]);
-		CPARAM("-h") {
-			printf("Usage: %s [-d] [-f] [-r w h] [-t file] [-o file] [-p #particles] [-h]\n",argv[0]);
-			puts("Options");
-			puts("  -d\tautostart demo");
-			puts("  -f\tfullscreen");
-			puts("  -h\thelp");
-			puts("  -o\tobject model file (obj format) - default: \"../models/sphere.obj\"");
-			puts("  -p\tnumber of particles - default: 50000");
-			puts("  -r\tresolution [width x height] - default: 1024x768");
-			puts("  -t\ttexture file - default: \"../models/sun.jpg\"");
-			exit(0);
-		}
-	}
+  for(int i=1; argv[i]!=NULL;i++) {
+    CPARAM("-d")
+      params.demo = true;
+    CPARAM("-f")
+      params.fullscreen = true;
+    CPARAM("-r") {
+      params.res_width = atoi(argv[++i]);
+      params.res_height = atoi(argv[++i]);
+    }
+    CPARAM("-t")
+      params.texture = argv[++i];
+    CPARAM("-o")
+      params.obj = argv[++i];
+    CPARAM("-p")
+      params.particles = atoi(argv[++i]);
+    CPARAM("-h") {
+      printf("Usage: %s [-d] [-f] [-r w h] [-t file] [-o file] [-p #particles] [-h]\n",argv[0]);
+      puts("Options");
+      puts("  -d\tautostart demo");
+      puts("  -f\tfullscreen");
+      puts("  -h\thelp");
+      puts("  -o\tobject model file (obj format) - default: \"../models/sphere.obj\"");
+      puts("  -p\tnumber of particles - default: 50000");
+      puts("  -r\tresolution [width x height] - default: 1024x768");
+      puts("  -t\ttexture file - default: \"../models/sun.jpg\"");
+      exit(0);
+    }
+  }
 }
 
 int main(int argc, char** argv)
 {
-	parse_params(argv);
+  parse_params(argv);
 
-	srand((unsigned int)time(NULL));
-	particles = new Particle* [N_PARTICLES];
+  srand((unsigned int)time(NULL));
+  particles = new Particle* [N_PARTICLES];
 
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); //Double buffer; Color display
+  glutInit(&argc, argv);
+  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); //Double buffer; Color display
 
-	glutInitContextVersion(3, 3); //OpenGL 3.3
-	glutInitContextFlags(GLUT_FORWARD_COMPATIBLE | GLUT_DEBUG); //Forward compatible profile (Old Opengl (pre-3.x) functions can be used, but SHOULDN'T) 
+  glutInitContextVersion(3, 3); //OpenGL 3.3
+  glutInitContextFlags(GLUT_FORWARD_COMPATIBLE | GLUT_DEBUG); //Forward compatible profile (Old Opengl (pre-3.x) functions can be used, but SHOULDN'T) 
 
-	glutInitWindowSize(params.res_width, params.res_height);
-	glutCreateWindow(argv[0]);
+  glutInitWindowSize(params.res_width, params.res_height);
+  glutCreateWindow(argv[0]);
 
-	if(params.fullscreen)
-		glutFullScreen();
+  if(params.fullscreen)
+    glutFullScreen();
 
-	dumpInfo();
+  dumpInfo();
 
-	/*
-		Sets the specific functions
-	*/
-	glutDisplayFunc(display); 
-	glutReshapeFunc(reshape);
-	glutKeyboardFunc(keyboard);
-	glutSpecialFunc(keyboardSpecialKeys);
-	glutMouseFunc(glutMouse);
-	glutMotionFunc(glutMotion);
-	glutPassiveMotionFunc(glutPassiveMotion);
-	glutIdleFunc(mainLoop);
+  /*
+    Sets the specific functions
+  */
+  glutDisplayFunc(display); 
+  glutReshapeFunc(reshape);
+  glutKeyboardFunc(keyboard);
+  glutSpecialFunc(keyboardSpecialKeys);
+  glutMouseFunc(glutMouse);
+  glutMotionFunc(glutMotion);
+  glutPassiveMotionFunc(glutPassiveMotion);
+  glutIdleFunc(mainLoop);
 
-	checkError ("main");
-	glutMainLoop(); //starts processing
+  checkError ("main");
+  glutMainLoop(); //starts processing
 
 
-	return 0;
+  return 0;
 }

@@ -18,12 +18,12 @@ extern GLfloat ambientComponent[];
 extern GLfloat diffuseColor[];
 
 /*
-	[FREEGLUT]
+  [FREEGLUT]
 
-	display function;
-	This function is called to paint the display. This is where the drawing functions should be placed.
-	Why is the init inside display? Because some drivers require that the display window to be visible to work correctly; therefore, the initialization is done once, but on the first call to 
-	display, ensuring that the window is visible;
+  display function;
+  This function is called to paint the display. This is where the drawing functions should be placed.
+  Why is the init inside display? Because some drivers require that the display window to be visible to work correctly; therefore, the initialization is done once, but on the first call to 
+  display, ensuring that the window is visible;
 */
 void display(void);
 

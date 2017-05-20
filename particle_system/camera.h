@@ -19,11 +19,11 @@ extern Bezier *camera_curve;
 extern Particle *camera_particle;
 
 /* 
-	Camera setup function.
-	This creates the camera or view matrix based on the position of the player and the camera type.
-	In this case, this we are going to create a first person camera.
+  Camera setup function.
+  This creates the camera or view matrix based on the position of the player and the camera type.
+  In this case, this we are going to create a first person camera.
 
-	note: the lookAt function from GLM works the same as the *old* gluLookAt function
+  note: the lookAt function from GLM works the same as the *old* gluLookAt function
 */
 
 void setupCamera(void);
