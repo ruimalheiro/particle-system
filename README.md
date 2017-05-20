@@ -10,6 +10,6 @@ It a simple particle system that uses vector fields to create fun visual effects
 ### Instructions
 * This project can be compiled and run with Microsoft Visual Studio Express 2012 for Windows Desktop.
 * After building the project, you can run "Menu.exe" from "Debug" folder or "Release" folder to configure the number of particles and resolution that you want to use.
-* You can watch a demo of this project on: [particle_system_video] (http://www.youtube.com/watch?v=DXRuRM1F8PM)
+* You can watch a demo of this project on: [particle_system_video](http://www.youtube.com/watch?v=DXRuRM1F8PM)
 
 This project was created by [Rui Malheiro](https://github.com/ruimalheiro) and [Ricardo Gonçalves](https://github.com/rigon).
